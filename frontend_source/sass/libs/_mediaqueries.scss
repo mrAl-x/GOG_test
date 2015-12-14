@@ -1,0 +1,185 @@
+// =============================
+// 		Large Desktop
+// =============================
+
+@media only screen and (min-width : 1281px) {
+
+	.blocks__logo__img {
+		margin-left: 0;
+	}
+
+	.blocks__nav {
+		margin-left: 20px;
+	}
+
+	.container__blocksTitle {
+		max-width: 950px;
+	}
+
+	.blocks__article__header__title {
+		max-width: 950px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	
+	.blocks__article__header__image--small {
+		max-width: 950px;
+	}
+
+	.blocks__article__header__origin {
+		max-width: 950px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	.blocks__article__content {
+		max-width: 950px;
+	}
+
+	.blocks__article__content__image {
+		max-width: 950px;
+	}
+
+	.blocks__article__content__video {
+		max-width: 950px;
+	}
+
+}
+
+@media only screen and (max-width : 991px) {
+
+	.container-blocksHeader {
+		max-height: 90px;
+	}
+
+	.portfolio__flexContainer {
+		justify-content: space-around;
+	}
+
+	.footer {
+		min-height: 440px;
+	}
+
+	.footer__icons {
+		margin: 20px auto;
+	}
+
+	.blocks__logo__img {
+		left: 0;
+	}
+
+	.blocks__nav {
+		left: 15px;
+		margin-left: 45px;
+	}
+
+	.blocks__footer__nav {
+		max-width: 400px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+}
+
+
+// =============================
+// 				XS
+// =============================
+
+@media only screen and (max-width : 767px) {
+
+	.mainNav__list {
+		margin-top: 40px;
+	}
+
+	.mainNav__list__item {
+		margin-bottom: 0;
+	}
+
+	.mainNav__list__item__link {
+		margin-bottom: 5px;
+		font-size: 1.8em;
+	}
+
+	.mainNav__social {
+		margin: 120px auto 0 auto;
+	}
+
+	.header__logo {
+		top: 50%;
+		margin: -120px auto 0 -75px;
+	}
+
+	.header__title {
+		top: 50%;
+		margin-top: 50px;
+	}
+
+	.header__subtitle {
+		top: 50%;
+		margin-top: 100px;
+	}
+
+
+	.build {
+		display: none;
+	}
+
+	.footer__background__watermark {
+		opacity: .4;
+	}
+
+	.portfolio__flexContainer {
+		justify-content: space-around;
+	}
+	
+	.blocks__logo {
+		position: relative;
+		text-align: center;
+	}
+	
+	.blocks__logo__img {
+		margin-left: 0;
+	}
+
+	.blocks__nav {
+		display: none;
+	}
+
+	.blocks__article__header__title,
+	.blocks__article__header__origin {
+		left: 0;
+		margin-left: 0;
+	}
+
+	.container {
+		margin-right: 20px;
+		margin-left: 20px;
+	}
+
+	.footer__title {
+		margin-top: 50px;
+	}
+
+	.footer__icons {
+		margin: 5px auto 20px auto;
+	}
+
+}
+
+// =============================
+// 				XXS
+// =============================
+
+@media only screen and (max-width : 500px) {
+
+	.portfolio__flexContainer__frame__picture {
+		margin: 0;
+	}
+
+	.blocks__article__header__figure__image {
+		width: auto;
+		height: 100%;
+	}
+
+}

@@ -1,0 +1,45 @@
+// --------- Vars ---------
+$trackWidth: 780px;
+$trackHeight: 14px;
+
+// --------- Reset Default Style ---------
+
+input[type=range] {
+	-webkit-appearance: none; /* Hides slider so that custom slider can be made */
+	width: $trackWidth; /* Specific width is required for Firefox */
+	margin-top: 8px;
+	background: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+}
+
+input[type=range]:focus {
+	outline: none; /* Removes blue border */
+}
+
+input[type=range]::-ms-track {
+	width: $trackWidth;
+	cursor: pointer;
+	background: transparent; /* Hides the slider so custom styles can be added */
+	border-color: transparent;
+	color: transparent;
+}
+
+@import "handleStyle";
+@import "progressStyle";
+
+// --------- Track Style ---------
+
+.payment__range::-webkit-slider-runnable-track {
+	width: $trackWidth;
+	height: $trackHeight;
+
+	background: #CDCDCD;
+	border: 1px solid #AAA;
+	border-radius: 7px;
+	box-shadow: 0 1px 0 rgba(#FFF, .75),
+		inset 0 0 1px rgba(#000, .25);
+	cursor: pointer;
+}

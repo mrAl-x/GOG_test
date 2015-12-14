@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<head>
+   <meta charset="utf-8">
+   <meta http-equiv="content-language" content="en-us">
+   <title>{{ TITLE }}</title>
+   <meta name="author" content="Alexandre Ferreira" />
+   <meta name="description" content="{{ PAGE DESCRIPTION }}" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+   <link rel="stylesheet" href="./css/libs/bootstrap.min.css" />
+   <link rel="stylesheet" href="./css/app.css" />
+
+   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css' />
+</head>
+<body>
+   <div class="topGradient"></div>
+   <nav class="mainMenu container-fluid">
+      <img src="images/menu.png" alt="" />
+   </nav>
+   <div class="container">
+      <header class="header">
+         <h1 class="header__mainTitle">Pay what you want for the <strong class="header__mainTitle--strong">Divinity Bundle</strong> ($32 value!)</h1>
+         <ul class="header__features container-890">
+            <li class="header__item">
+               <img class="header__icon" src="images/icon-heart.png" alt="" />
+               <span class="header__text">
+                  Support Larian Studios
+               </span>
+            </li>
+            <li class="header__item">
+               <img class="header__icon" src="images/icon-mouse.png" alt="" />
+               <span class="header__text">
+                  Play Divinity 2: DC before release
+               </span>
+            </li>
+            <li class="header__item">
+               <img class="header__icon" src="images/icon-lock.png" alt="" />
+               <span class="header__text">
+                  Get DRM-free games with goodies
+               </span>
+            </li>
+            <li class="header__item header__item--highlight">
+               <img class="header__item__icon" src="images/icon-clock.png" alt="" />
+               <span class="header__text">
+                  Only <strong class="header__text--strong">HH:MM:SS</strong> left
+               </span>
+            </li>
+         </ul>
+      </header>
+      <section class="main">
+         <section class="featuring container-890">
+            <ul class="featuring__gamesList">
+               <li class="featuring__item featuring__item--left">
+                  <div class="featuring__wrapper">
+                     <figure class="featuring__image">
+                        <img class="featuring__gameCover" src="images/background-gameSprite-1.png" alt="" />
+                     </figure>
+                     <hr class="featuring__separator" />
+                     <p class="featuring__description">
+                        <a class="featuring__description--link" href="http://www.gog.com/game/divine_divinity">Divine Divinity</a> (normal price $5.99) <strong class="featuring__description--strong">with 6 goodies and 4 language versions</strong>
+                     </p>
+                     <hr class="featuring__separator" />
+                     <p class="featuring__message featuring__message--check">Below average</p>
+                  </div>
+               </li>
+               <li class="featuring__item featuring__item--middle">
+                  <div class="featuring__wrapper">
+                     <figure class="featuring__image">
+                        <img class="featuring__gameCover featuring__gameCover" src="images/background-gameSprite-2.png" alt="" />
+                     </figure>
+                     <hr class="featuring__separator" />
+                     <p class="featuring__description">
+                        <a class="featuring__description--link" href="http://www.gog.com/game/beyond_divinity">Beyond Divinity</a> (normal price $5.99) <strong class="featuring__description--strong">with 6 goodies and 4 language versions</strong>
+                     </p>
+                     <hr class="featuring__separator" />
+                     <p class="featuring__message featuring__message--check">Above average <strong class="featuring__message--strong">(from $X.XX)</strong></p>
+                  </div>
+               </li>
+               <li class="featuring__item featuring__item--right">
+                  <div class="featuring__wrapper">
+                     <figure class="featuring__image featuring__image--right">
+                        <img class="featuring__gameCover featuring__gameCover--inactive" src="images/background-gameSprite-3.png" alt="" />
+                     </figure>
+                     <hr class="featuring__separator" />
+                     <p class="featuring__description">
+                        <a class="featuring__description--link" href="http://www.gog.com/game/divinity_2_developers_cut">Divinity 2</a> (preorder, normal price $19.99) <strong class="featuring__description--strong"> with 9 goodies and 7 language versions</strong>
+                     </p>
+                     <hr class="featuring__separator" />
+                     <p class="featuring__message featuring__message--error">Top supporter <strong class="featuring__message--strong">(from $XX.XX)</strong></p>
+                  </div>
+               </li>
+            </ul>
+         </section>
+         <hr class="main__separator" />
+         <section class="payment container-890">
+            <span class="payment__minimum">$0.99</span>
+            <div class="payment__slider">
+               <input class="payment__range" type="range" id="price" min="0.99" max="49.99" value="14.99" step="0.01" />
+            </div>
+            <span class="payment__maximum">$49.99</span>
+            <div class="payment__tooltip">
+               <span class="payment__amount">$14.99</span>
+               <input class="payment__checkout" type="button" value="Checkout now" />
+               <small class="payment__note">
+                  Click the price to type it in manually
+               </small>
+            </div>
+         </section>
+      </section>
+   </div>
+
+<script src="../js/app.min.js"></script>
+</body>
+</html>
