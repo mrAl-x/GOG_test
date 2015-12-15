@@ -203,7 +203,7 @@
 
 .payment__minimum {
 	position: relative;
-	top: 11px;
+	top: -2px;
 	margin-right: 12px;
 	font-size: em(14px);
 	font-weight: 600;
@@ -215,14 +215,49 @@
 	margin-left: 12px;
 }
 
+.payment__progressContainer {
+	content: "";
+	position: absolute;
+	z-index: 0;
+
+	width: $trackWidth - 10;
+	height: $trackHeight;
+	margin-top: -18px;
+	margin-left: 1px;
+
+	border-top: 1px solid #809B00;
+	border-bottom: 1px solid #5E7F00;
+	border-radius: 15px;
+
+	overflow: hidden;
+}
+
+.payment__progress {
+	content: "";
+	position: absolute;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	// top: 7px;
+	// right: 17px;
+
+	// --- Background Colors ---
+	box-shadow: inset 0 1px 0 rgba(#E7FF00, .67),
+		inset 0 -1px 5px rgba(#FFFFBe, .26),
+		inset 0 0 2px rgba(#000, .25);
+	background: #adc900; /* Old browsers */
+	background: -webkit-linear-gradient(top,  #adc900 0%,#7ca900 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #adc900 0%,#7ca900 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#adc900', endColorstr='#7ca900',GradientType=0 ); /* IE6-9 */
+}
+
 .payment__slider {
 	position: relative;
 	display: inline-block;
 	top: 13px;
 	width: 780px;
-	height: 33px;
-	margin-bottom: 2px;
-	// overflow: hidden;
+	height: 35px;
+	overflow: hidden;
 }
 
 @import "./libs/custom-range";
@@ -234,8 +269,8 @@
 
 	width: 222px;
 	height: 64px;
-	margin-top: 12px;
-	margin-left: -56px;
+	margin-top: 8px;
+	margin-left: -60px;
 	padding: 10px;
 
 	background: #c2c2c2; /* Old browsers */

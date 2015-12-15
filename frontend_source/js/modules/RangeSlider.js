@@ -5,16 +5,18 @@ App.RangeSlider = (function() {
 	var dom = function() {
 		var slider = document.getElementById('price'),
 		amount     = document.getElementById('amount'),
-		tooltip    = document.getElementsByClassName('payment__tooltip')[0];
+		tooltip    = document.getElementsByClassName('payment__tooltip')[0],
+		progress   = document.getElementsByClassName('payment__progressContainer')[0];
 
 		return {
-			slider : slider,
-			amount : amount,
-			tooltip: tooltip
+			slider  : slider,
+			amount  : amount,
+			tooltip : tooltip,
+			progress: progress
 		};
 	};
 
-	var moveTooltip = function() {
+	var moveProgress = function( newPos ) {
 
 		// Range width with the slide handle offset
 		width = dom().slider.clientWidth - 19.5;
@@ -22,7 +24,18 @@ App.RangeSlider = (function() {
 		// Figure out placement percentage between left and right of input
 		percent = (dom().slider.value - dom().slider.getAttribute("min")) / (dom().slider.getAttribute("max") - dom().slider.getAttribute("min"));
 
-		newPos = width * parseFloat( percent ).toFixed(3);
+		newPos = width * parseFloat( percent ).toFixed(3) + 10;
+
+		dom().progress.style.width = newPos + 'px';
+
+
+		if ( dom().amount.value > 5 && dom().amount.value <= 47 ) {
+			moveTooltip( newPos );
+		}
+
+	};
+
+	var moveTooltip = function( newPos ) {
 
 		dom().tooltip.style.left = newPos + 'px';
 
@@ -37,10 +50,7 @@ App.RangeSlider = (function() {
 
 			// Always display two decimal places
 			dom().amount.value = parseFloat(this.value).toFixed(2);
-
-			if ( dom().amount.value > 5 && dom().amount.value <= 47 ) {
-				moveTooltip();
-			}
+			moveProgress()
 
 		});
 
