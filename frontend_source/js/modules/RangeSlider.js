@@ -62,7 +62,7 @@ App.RangeSlider = (function() {
 
 			( amount.value < '0.99' ) ? amount.value = '0.99' : amount.value;
 			dom().slider.value = amount.value;
-			moveTooltip();
+			moveProgress();
 
 		});
 
@@ -72,7 +72,7 @@ App.RangeSlider = (function() {
 
 		slider();
 		changeAmount();
-		moveTooltip();
+		moveProgress();
 
 	};
 
