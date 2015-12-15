@@ -1,3 +1,4 @@
+@import "./libs/webfonts";
 @import "./libs/vars";
 @import "./libs/funcs";
 @import "./libs/base";
@@ -77,7 +78,7 @@
 	position: relative;
 	width: 100%;
 	margin-top: 30px;
-	margin-bottom: 50px;
+	margin-bottom: 60px;
 	padding-bottom: 25px;
 
 	background: url('../images/background-games.png') #E1E1E1 no-repeat top center;
@@ -285,6 +286,7 @@
 	color: #03101A;
 	font-size: em(13px);
 	font-weight: 600;
+	text-shadow: 0 1px 0 rgba(#FFF, .3);
 
 	box-shadow: inset 0 1px 0 rgba(#FFF, .5),
 		inset 0 0 0 1px rgba(#FFF, .1),
@@ -322,6 +324,242 @@
 
 		background: url('../images/icon-info.png') no-repeat center center;
 	}
+}
+
+.goodiesContainer {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.goodies {
+	max-width: 550px;
+}
+
+.goodies__title {
+	display: inline-block;
+	margin: 0 16px 30px 16px;
+
+	color: #4C4C4C;
+	font-size: em(14px);
+	font-weight: 300;
+	text-align: center;
+}
+
+.goodies__sep {
+	position: relative;
+	display: inline-block;
+	width: 112px;
+	height: 1px;
+	top: 2px;
+
+	border: none;
+	background: #BFBFBF;
+}
+
+.goodies__list {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.goodies__item {
+	max-width: 160px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.goodies__icon {
+	width: 24px;
+	height: 24px;
+	margin: 0 auto 10px auto;
+
+	background: url('../images/icons-goodies.png') no-repeat;
+	overflow: hidden;
+}
+
+.goodies__icon--soundtrack {
+	background-position: 0px 0px;
+}
+
+.goodies__icon--stories {
+	background-position: -45px 0px;
+}
+
+.goodies__icon--journal {
+	width: 27px;
+	background-position: -90px 0px;
+}
+
+.goodies__icon--movie {
+	width: 26px;
+	background-position: -235px 0px;
+}
+
+.goodies__icon--wallpaper {
+	width: 29px;
+	background-position: -183px 0px;
+}
+
+.goodies__icon--more {
+	background-position: -138px 0px;
+}
+
+.goodies__subtitle {
+	margin: 0 0 5px 0;
+
+	color: #666;
+	font-size: em(12px);
+	font-weight: 600;
+}
+
+.goodies__description {
+	margin: 0;
+
+	color: #666;
+	font-weight: 400;
+	font-size: em(12px);
+	line-height: 18px;
+}
+
+.sold {
+	max-width: 335px;
+}
+
+.sold__sep {
+	@extend .goodies__sep;
+	width: 64px;
+}
+
+.sold__title {
+	@extend .goodies__title;
+}
+
+.sold__counter {
+	text-align: center;
+}
+
+.sold__number {
+	position: relative;
+	z-index: 1;
+	width: 30px;
+	height: 40px;
+	margin: 0 5px;
+
+	color: #FFF;
+	font-family: 'ds-digitalbold';
+	font-size: em(40px);
+	text-shadow: 0 1px 0 rgba(#000, .35);
+
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+
+	&:before {
+		content: '8';
+		position: absolute;
+		z-index: -1;
+		width: 30px;
+		height: 40px;
+		margin-top: -1px;
+		margin-left: -5px;
+
+		background: #a6a6a6;
+		background: -moz-linear-gradient(top,  #a6a6a6 0%, #bfbfbf 100%);
+		background: -webkit-linear-gradient(top,  #a6a6a6 0%,#bfbfbf 100%);
+		background: linear-gradient(to bottom,  #a6a6a6 0%,#bfbfbf 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6a6a6', endColorstr='#bfbfbf',GradientType=0 );
+
+		border: 1px solid rgba(#000, .3);
+		border-radius: 2px;
+
+		color: rgba(#FFF, .15);
+		box-shadow: 0 1px 0 rgba(#FFF, .85);
+		text-shadow: none;
+	}
+}
+
+.sold__subtitle {
+	@extend .goodies__subtitle;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.sold__description {
+	@extend .goodies__description;
+	max-width: 280px;
+	text-align: center;
+}
+
+.sold__videos {
+	position: relative;
+	width: 260px;
+	height: 145px;
+	margin: 15px auto 10px auto;
+
+	border: 7px solid #FFF;
+	box-shadow: 0 1px 5px rgba(#000, .45);
+}
+
+.sold__milestones {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: nowrap;
+
+	width: 260px;
+	height: 22px;
+	margin: 10px auto;
+
+	background-color: #CBCBCB;
+	border: 1px solid #A6A6A6;
+	border-radius: 3px;
+	box-shadow: 0 1px 0 rgba(#FFF, .35);
+}
+
+.sold__item {
+	width: 51px;
+	height: 100%;
+
+	border-right: 1px solid rgba(#666, .2);
+	color: #666;
+	font-size: em(10px);
+	text-align: center;
+
+	&:last-child {
+		border-left: none;
+	}
+}
+
+.sold__item--active {
+	background: #a6a6a6;
+	background: -moz-linear-gradient(top,  #a6a6a6 0%, #d9d9d9 100%);
+	background: -webkit-linear-gradient(top,  #a6a6a6 0%,#d9d9d9 100%);
+	background: linear-gradient(to bottom,  #a6a6a6 0%,#d9d9d9 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6a6a6', endColorstr='#d9d9d9',GradientType=0 );
+
+	box-shadow: inset 0 0 5px rgba(#000, .25);
+
+	font-weight: 700;
+}
+
+.sold__check {
+	position: relative;
+	display: none;
+	margin-top: 5px;
+}
+
+.sold__check--active {
+	display: inline-block;
+}
+
+.sold__value {
+	position: relative;
+	top: 3px;
+}
+
+.sold__value--inactive {
+	display: none;
 }
 
 

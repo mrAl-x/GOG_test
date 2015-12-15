@@ -51,7 +51,8 @@ module.exports = function(grunt) {
             files: [
                {expand: true, flatten: true, src: ['./*.html'], dest: '../build/gog/app/'},
                {expand: true, flatten: true, src: ['./sass/libs/*.css'], dest: '../build/gog/app/css/libs/'},
-               {expand: true, flatten: true, src: ['./js/libs/*.js'], dest: '../build/gog/app/js/libs/'}
+               {expand: true, flatten: true, src: ['./js/libs/*.js'], dest: '../build/gog/app/js/libs/'},
+               {expand: true, flatten: true, src: ['./fonts/*'], dest: '../build/gog/app/fonts/'}
             ],
          }
       },
