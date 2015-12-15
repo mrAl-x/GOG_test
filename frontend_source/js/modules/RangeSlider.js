@@ -14,31 +14,6 @@ App.RangeSlider = (function() {
 		};
 	};
 
-	var slider = function() {
-		var width,
-			 percent,
-			 newPlace;
-
-		dom().slider.addEventListener('input', function() {
-
-			// Always display two decimal places
-			dom().amount.value = parseFloat(this.value).toFixed(2);
-			moveTooltip();
-
-		});
-
-	};
-
-	var changeAmount = function() {
-
-		amount.addEventListener('change', function() {
-			( amount.value < '0.99' ) ? amount.value = '0.99' : amount.value;
-			dom().slider.value = amount.value;
-			moveTooltip();
-		});
-
-	};
-
 	var moveTooltip = function() {
 
 		// Range width with the slide handle offset
@@ -50,6 +25,36 @@ App.RangeSlider = (function() {
 		newPos = width * parseFloat( percent ).toFixed(3);
 
 		dom().tooltip.style.left = newPos + 'px';
+
+	};
+
+	var slider = function() {
+		var width,
+			 percent,
+			 newPlace;
+
+		dom().slider.addEventListener('input', function() {
+
+			// Always display two decimal places
+			dom().amount.value = parseFloat(this.value).toFixed(2);
+
+			if ( dom().amount.value > 5 && dom().amount.value <= 47 ) {
+				moveTooltip();
+			}
+
+		});
+
+	};
+
+	var changeAmount = function() {
+
+		amount.addEventListener('change', function() {
+
+			( amount.value < '0.99' ) ? amount.value = '0.99' : amount.value;
+			dom().slider.value = amount.value;
+			moveTooltip();
+
+		});
 
 	};
 

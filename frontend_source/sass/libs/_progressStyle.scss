@@ -1,31 +1,31 @@
 // --------- Progress Style ---------
 
-.payment__range::-webkit-slider-thumb:before {
-	content: "";
-	position: absolute;
-	z-index: 0;
-	top: 7px;
-	right: 17px;
+// .payment__range::-webkit-slider-thumb::before {
+// 	content: "";
+// 	position: absolute;
+// 	z-index: 0;
+// 	top: 7px;
+// 	right: 17px;
 
-	width: $trackWidth - 20;
-	height: $trackHeight - 2;
+// 	width: $trackWidth - 20;
+// 	height: $trackHeight - 2;
 
-	// --- Background Colors ---
-	box-shadow: inset 0 1px 0 rgba(#E7FF00, .67),
-		inset 0 -1px 5px rgba(#FFFFBe, .26);
-	background: #adc900; /* Old browsers */
-	background: -webkit-linear-gradient(top,  #adc900 0%,#7ca900 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  #adc900 0%,#7ca900 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#adc900', endColorstr='#7ca900',GradientType=0 ); /* IE6-9 */
+// 	// --- Background Colors ---
+// 	box-shadow: inset 0 1px 0 rgba(#E7FF00, .67),
+// 		inset 0 -1px 5px rgba(#FFFFBe, .26);
+// 	background: #adc900; /* Old browsers */
+// 	background: -webkit-linear-gradient(top,  #adc900 0%,#7ca900 100%); /* Chrome10-25,Safari5.1-6 */
+// 	background: linear-gradient(to bottom,  #adc900 0%,#7ca900 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+// 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#adc900', endColorstr='#7ca900',GradientType=0 ); /* IE6-9 */
 
-	// --- Border Gradient ---
-	border: 1px solid transparent;
-	border-top-left-radius: 7px;
-	border-bottom-left-radius: 7px;
-	-webkit-border-image: -webkit-linear-gradient(left, #5E7f00 0%, #809B00 100%);
-	border-image: linear-gradient(to right, #5E7f00 0%, #809B00 100%);
-	border-image-slice: 1;
-}
+// 	// --- Border Gradient ---
+// 	border: 1px solid transparent;
+// 	border-top-left-radius: 7px;
+// 	border-bottom-left-radius: 7px;
+// 	-webkit-border-image: -webkit-linear-gradient(left, #5E7f00 0%, #809B00 100%);
+// 	border-image: linear-gradient(to right, #5E7f00 0%, #809B00 100%);
+// 	border-image-slice: 1;
+// }
 
 // --------- FireFox ---------
 
