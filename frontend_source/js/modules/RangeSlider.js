@@ -2,7 +2,7 @@ var App = App || {};		// If App is not defined make it an empty object
 
 App.RangeSlider = (function() {
 
-	var dom = function() {
+	var vars = function() {
 		var slider = document.getElementById('price'),
 		amount     = document.getElementById('amount'),
 		tooltip    = document.getElementsByClassName('payment__tooltip')[0],
@@ -12,32 +12,40 @@ App.RangeSlider = (function() {
 			slider  : slider,
 			amount  : amount,
 			tooltip : tooltip,
-			progress: progress
+			progress: progress,
+			average : '7.67',
+			top     : '18.31'
 		};
 	};
 
-	var moveProgress = function( newPos ) {
-
-		// Range width with the slide handle offset
-		width = dom().slider.clientWidth - 19.5;
-
-		// Figure out placement percentage between left and right of input
-		percent = (dom().slider.value - dom().slider.getAttribute("min")) / (dom().slider.getAttribute("max") - dom().slider.getAttribute("min"));
-
-		newPos = width * parseFloat( percent ).toFixed(3) + 10;
-
-		dom().progress.style.width = newPos + 'px';
+	var placeMilestones = function() {
 
 
-		if ( dom().amount.value > 5 && dom().amount.value <= 47 ) {
-			moveTooltip( newPos );
-		}
 
 	};
 
 	var moveTooltip = function( newPos ) {
 
-		dom().tooltip.style.left = newPos + 'px';
+		vars().tooltip.style.left = newPos + 'px';
+
+	};
+
+	var moveProgress = function( newPos ) {
+
+		// Range width with the slide handle offset
+		width = vars().slider.clientWidth - 19.5;
+
+		// Figure out placement percentage between left and right of input
+		percent = (vars().slider.value - vars().slider.getAttribute("min")) / (vars().slider.getAttribute("max") - vars().slider.getAttribute("min"));
+
+		newPos = width * parseFloat( percent ).toFixed(3) + 10;
+
+		vars().progress.style.width = newPos + 'px';
+
+
+		if ( vars().amount.value > 5 && vars().amount.value <= 47 ) {
+			moveTooltip( newPos );
+		}
 
 	};
 
@@ -46,10 +54,10 @@ App.RangeSlider = (function() {
 			 percent,
 			 newPlace;
 
-		dom().slider.addEventListener('input', function() {
+		vars().slider.addEventListener('input', function() {
 
 			// Always display two decimal places
-			dom().amount.value = parseFloat(this.value).toFixed(2);
+			vars().amount.value = parseFloat(this.value).toFixed(2);
 			moveProgress()
 
 		});
@@ -61,7 +69,16 @@ App.RangeSlider = (function() {
 		amount.addEventListener('change', function() {
 
 			( amount.value < '0.99' ) ? amount.value = '0.99' : amount.value;
-			dom().slider.value = amount.value;
+			vars().slider.value = amount.value;
+
+			if ( amount.value <= 5 ) {
+				vars().tooltip.style.left = '72.3px';
+			}
+
+			else if ( amount.value >= 47 ) {
+				vars().tooltip.style.left = '724.1px';
+			}
+
 			moveProgress();
 
 		});
@@ -73,6 +90,7 @@ App.RangeSlider = (function() {
 		slider();
 		changeAmount();
 		moveProgress();
+		placeMilestones();
 
 	};
 
