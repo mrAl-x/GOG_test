@@ -2,7 +2,7 @@ var App = App || {};		// If App is not defined make it an empty object
 
 App.Config = (function() {
 
-	const limit = '24:00:12';
+	const limit = '23:59:59';
 
 	var countdown = function() {
 		
@@ -21,6 +21,7 @@ App.Config = (function() {
 
 				if ( mm !== '00' ) {
 					mm = Number(mm) - 1;
+					(mm < 10) ? mm = '0' + mm : mm;
 				}
 
 				else {
@@ -29,6 +30,7 @@ App.Config = (function() {
 
 					if ( hh !== '00' ) {
 						hh = Number(hh) - 1;
+						(hh < 10) ? hh = '0' + hh : hh;
 					}
 
 					else {
