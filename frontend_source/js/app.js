@@ -1,3 +1,4 @@
 var App = App || {};
 
-App.Config.init();
+App.Countdown.init();
+App.RangeSlider.init();

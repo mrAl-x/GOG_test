@@ -232,6 +232,7 @@
 	width: 222px;
 	height: 64px;
 	margin-top: 12px;
+	margin-left: -56px;
 	padding: 10px;
 
 	background: #c2c2c2; /* Old browsers */
@@ -263,9 +264,16 @@
 	position: relative;
 	top: 5px;
 
+	background: none;
+	max-width: 70px;
+	border: none;
+
 	color: #698C00;
 	font-size: em(25px);
 	font-weight: 700;
+
+	outline: none;
+	cursor: text;
 }
 
 .payment__checkout {

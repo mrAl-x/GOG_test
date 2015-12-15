@@ -1,10 +1,10 @@
 var App = App || {};		// If App is not defined make it an empty object
 
-App.Config = (function() {
-
-	const limit = '23:59:59';
+App.Countdown = (function() {
 
 	var countdown = function() {
+
+		const limit = '23:59:59';
 		
 		var time = limit.split(':');
 		var hh = time[0],
