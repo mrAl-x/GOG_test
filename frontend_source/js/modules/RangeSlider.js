@@ -18,9 +18,57 @@ App.RangeSlider = (function() {
 		};
 	};
 
+	var slider = function() {
+		var width,
+			 percent,
+			 newPlace;
+
+		vars().slider.addEventListener('input', function() {
+
+			// Always display two decimal places
+			vars().amount.value = parseFloat(this.value).toFixed(2);
+			moveProgress()
+
+		});
+
+	};
+
+	var milestoneValue = function() {
+
+		document.getElementsByClassName('payment__average')[0].innerHTML = vars().average;
+		document.getElementsByClassName('payment__top')[0].innerHTML = vars().top;
+
+	};
+
 	var placeMilestones = function() {
 
+		var top = document.querySelectorAll('.payment__milestone--top .payment__milestone')[0],
+		average = document.querySelectorAll('.payment__milestone--average .payment__milestone')[0],
+		textTop = document.querySelectorAll('.payment__milestone--top .payment__milestonesText')[0],
+		textAverage = document.querySelectorAll('.payment__milestone--average .payment__milestonesText')[0];
 
+		milestoneValue();
+
+		// Range width with the slide handle offset
+		var width = vars().slider.clientWidth - 25;
+
+		// Figure out placement percentage between left and right of input
+		topPercentage     = (vars().top - vars().slider.getAttribute("min")) / (vars().slider.getAttribute("max") - vars().slider.getAttribute("min"));
+		averagePercentage = (vars().average - vars().slider.getAttribute("min")) / (vars().slider.getAttribute("max") - vars().slider.getAttribute("min"));
+		
+
+		var topPos = width * parseFloat( topPercentage ).toFixed(3) + 10;
+		var averagePos = width * parseFloat( averagePercentage ).toFixed(3) + 10;
+
+		top.style.left = topPos + 'px';
+		average.style.left = averagePos + 'px';
+
+		textTop.style.left = topPos + 'px';
+		textAverage.style.left = averagePos + 'px';
+
+		if ( ( vars().top - vars().average ) < 4 ) {
+			textTop.style.top = '-28px';
+		}
 
 	};
 
@@ -46,21 +94,6 @@ App.RangeSlider = (function() {
 		if ( vars().amount.value > 5 && vars().amount.value <= 47 ) {
 			moveTooltip( newPos );
 		}
-
-	};
-
-	var slider = function() {
-		var width,
-			 percent,
-			 newPlace;
-
-		vars().slider.addEventListener('input', function() {
-
-			// Always display two decimal places
-			vars().amount.value = parseFloat(this.value).toFixed(2);
-			moveProgress()
-
-		});
 
 	};
 

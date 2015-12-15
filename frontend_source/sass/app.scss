@@ -202,7 +202,7 @@
 
 .payment__minimum {
 	position: relative;
-	top: -2px;
+	top: 11px;
 	margin-right: 12px;
 	font-size: em(14px);
 	font-weight: 600;
@@ -231,6 +231,36 @@
 	overflow: hidden;
 }
 
+.payment__milestonesText {
+	position: absolute;
+	top: -15px;
+
+	color: #808080;
+	font-size: em(10px);
+}
+
+.payment__milestonesText--top {
+	margin-left: -40px;
+}
+
+.payment__milestonesText--average {
+	margin-left: -35px;
+}
+
+.payment__milestone {
+	position: absolute;
+	z-index: 1;
+	width: 6px;
+	height: 6px;
+	top: 12px;
+
+	background: rgba(#000, .4);
+	border-radius: 50%;
+	box-shadow: inset 0 0 1px rgba(#000, .75),
+		0 1px 0 rgba(#FFF, .35);
+
+}
+
 .payment__progress {
 	content: "";
 	position: absolute;
@@ -254,7 +284,7 @@
 	top: 13px;
 	width: 780px;
 	height: 35px;
-	overflow: hidden;
+	margin-bottom: 4px;
 }
 
 @import "./libs/custom-range";
