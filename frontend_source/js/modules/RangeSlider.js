@@ -15,17 +15,15 @@ App.RangeSlider = (function() {
 	};
 
 	var slider = function() {
-		var elem,
-			 width,
+		var width,
 			 percent,
 			 newPlace;
 
 		dom().slider.addEventListener('input', function() {
 
-			elem = this;
 			// Always display two decimal places
-			dom().amount.value = parseFloat(elem.value).toFixed(2);
-			moveTooltip( elem, width );
+			dom().amount.value = parseFloat(this.value).toFixed(2);
+			moveTooltip();
 
 		});
 
@@ -34,25 +32,24 @@ App.RangeSlider = (function() {
 	var changeAmount = function() {
 
 		amount.addEventListener('change', function() {
+			( amount.value < '0.99' ) ? amount.value = '0.99' : amount.value;
 			dom().slider.value = amount.value;
+			moveTooltip();
 		});
 
 	};
 
-	var moveTooltip = function( elem, width ) {
+	var moveTooltip = function() {
 
-		// dom().tooltip.style.left = dom().amount.value + 'px';
-
-		// Range width
-		width = elem.clientWidth - 20;
+		// Range width with the slide handle offset
+		width = dom().slider.clientWidth - 19.5;
 
 		// Figure out placement percentage between left and right of input
-		percent = (elem.value - elem.getAttribute("min")) / (elem.getAttribute("max") - elem.getAttribute("min"));
+		percent = (dom().slider.value - dom().slider.getAttribute("min")) / (dom().slider.getAttribute("max") - dom().slider.getAttribute("min"));
 
 		newPos = width * parseFloat( percent ).toFixed(3);
 
 		dom().tooltip.style.left = newPos + 'px';
-		dom().tooltip.style.marginLeft = '-56px';
 
 	};
 
@@ -60,7 +57,7 @@ App.RangeSlider = (function() {
 
 		slider();
 		changeAmount();
-		// moveTooltip();
+		moveTooltip();
 
 	};
 
