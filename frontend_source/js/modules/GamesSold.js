@@ -2,7 +2,7 @@ var App = App || {};		// If App is not defined make it an empty object
 
 App.GamesSold = (function() {
 
-	var totalSells = '120000';
+	var totalSells = '22576';
 
 	var gamesSold = function() {
 
@@ -63,11 +63,37 @@ App.GamesSold = (function() {
 
 	};
 
+	var moveVideos = function() {
+
+		document.getElementsByClassName('sold__button--left')[0]
+			.addEventListener('click', function() {
+
+				var videoNum = Number( document.getElementsByClassName('sold__videosContainer')[0].classList[1].substr(23, 1) );
+				if ( videoNum > 1 ) {
+					document.getElementsByClassName('sold__videosContainer')[0].classList.remove('sold__videosContainer--' + videoNum);
+					document.getElementsByClassName('sold__videosContainer')[0].classList.add('sold__videosContainer--' + (videoNum - 1) );
+				}
+
+		});
+
+		document.getElementsByClassName('sold__button--right')[0]
+			.addEventListener('click', function() {
+
+				var videoNum = Number( document.getElementsByClassName('sold__videosContainer')[0].classList[1].substr(23, 1) );
+				if ( videoNum < 5 ) {
+					document.getElementsByClassName('sold__videosContainer')[0].classList.remove('sold__videosContainer--' + videoNum);
+					document.getElementsByClassName('sold__videosContainer')[0].classList.add('sold__videosContainer--' + (videoNum + 1) );
+				}
+
+		});
+
+	};
 
 	var init = function() {
 
 		gamesSold();
 		unlockVideos();
+		moveVideos();
 
 	};
 

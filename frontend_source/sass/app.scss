@@ -348,7 +348,6 @@
 		inset 0 0 0 1px rgba(#FFF, .1),
 		0 1px 2px 1px rgba(#000, .6),
 		0 0 0 1px rgba(#000, .1);
-	outline: none;
 
 	&:hover {
 		background: #a6c500; /* Old browsers */
@@ -568,14 +567,83 @@
 	text-align: center;
 }
 
+.sold__controls {
+	position: absolute;
+	width: 340px;
+	margin-top: 75px;
+	margin-left: -30px;
+}
+
+.sold__button {
+	display: inline-block;
+	width: 25px;
+	height: 27px;
+
+	background: url('../images/icons-arrows.png') no-repeat;
+	cursor: pointer;
+}
+
+.sold__button--left {
+	background-position: -3px 0;
+}
+
+.sold__button--right {
+	float: right;
+	background-position: -46px 0;
+}
+
+.sold__arrow {
+	top: 10px;
+}
+
+.sold__arrow--left {
+
+}
+
 .sold__videos {
 	position: relative;
+
 	width: 260px;
 	height: 145px;
 	margin: 15px auto 10px auto;
 
 	border: 7px solid #FFF;
 	box-shadow: 0 1px 5px rgba(#000, .45);
+
+	overflow: hidden
+}
+
+.sold__videosContainer {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: nowrap;
+
+	transition: margin-left .5s;
+}
+
+.sold__videosContainer--1 {
+	margin-left: 657px;
+}
+
+.sold__videosContainer--2 {
+	margin-left: 390px;
+}
+
+.sold__videosContainer--3 {
+	margin-left: 0px;
+}
+
+.sold__videosContainer--4 {
+	margin-left: -535px;
+}
+
+.sold__videosContainer--5 {
+	margin-left: -1068px;
+}
+
+
+.sold__video {
+	margin: 0 10px;
 }
 
 .sold__milestones {
