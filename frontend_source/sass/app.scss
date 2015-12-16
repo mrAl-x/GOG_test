@@ -165,6 +165,7 @@
 		height: 14px;
 		margin-right: 5px;
 
+		background-image: url(../images/icon-error.png);
 		background-repeat: no-repeat;
 		background-position: center center;
 	}
@@ -180,10 +181,6 @@
 	&::before {
 		background-image: url(../images/icon-check.png);
 	}
-}
-
-.featuring__message--error::before {
-	background-image: url(../images/icon-error.png);
 }
 
 .main__separator {

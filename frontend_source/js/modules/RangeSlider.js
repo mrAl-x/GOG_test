@@ -36,8 +36,16 @@ App.RangeSlider = (function() {
 	var milestoneValue = function() {
 
 		document.getElementsByClassName('payment__average')[0].innerHTML = vars().average;
+		document.getElementsByClassName('payment__average')[1].innerHTML = vars().average;
 		document.getElementsByClassName('payment__top')[0].innerHTML = vars().top;
+		document.getElementsByClassName('payment__top')[1].innerHTML = vars().top;
 
+	};
+
+	var defaultValue = function() {
+		document.getElementById('price').value = vars().top;
+		document.getElementById('amount').value = vars().top;
+		moveProgress();
 	};
 
 	var placeMilestones = function() {
@@ -66,6 +74,7 @@ App.RangeSlider = (function() {
 		textTop.style.left = topPos + 'px';
 		textAverage.style.left = averagePos + 'px';
 
+		// Lifts the top milestone text
 		if ( ( vars().top - vars().average ) < 4 ) {
 			textTop.style.top = '-28px';
 		}
@@ -90,10 +99,11 @@ App.RangeSlider = (function() {
 
 		vars().progress.style.width = newPos + 'px';
 
-
 		if ( vars().amount.value > 5 && vars().amount.value <= 47 ) {
 			moveTooltip( newPos );
 		}
+
+		unlockGames();
 
 	};
 
@@ -118,12 +128,44 @@ App.RangeSlider = (function() {
 
 	};
 
+	var unlockGames = function() {
+
+		if ( vars().amount.value < Number(vars().average) ) {
+			document.querySelectorAll('.featuring__item--middle .featuring__gameCover')[0].classList.add('featuring__gameCover--inactive');
+			document.querySelectorAll('.featuring__item--right .featuring__gameCover')[0].classList.add('featuring__gameCover--inactive');
+
+			document.querySelectorAll('.featuring__item--middle .featuring__message')[0].classList.remove('featuring__message--check');
+			document.querySelectorAll('.featuring__item--right .featuring__message')[0].classList.remove('featuring__message--check');
+
+
+		}
+
+		else if ( vars().amount.value >= Number(vars().average) && vars().amount.value < Number(vars().top) ) {
+			document.querySelectorAll('.featuring__item--middle .featuring__gameCover')[0].classList.remove('featuring__gameCover--inactive');
+			document.querySelectorAll('.featuring__item--right .featuring__gameCover')[0].classList.add('featuring__gameCover--inactive');
+
+			document.querySelectorAll('.featuring__item--middle .featuring__message')[0].classList.add('featuring__message--check');
+			document.querySelectorAll('.featuring__item--right .featuring__message')[0].classList.remove('featuring__message--check');
+		}
+
+		else if ( vars().amount.value >= Number(vars().top) ) {
+			document.querySelectorAll('.featuring__item--middle .featuring__gameCover')[0].classList.remove('featuring__gameCover--inactive');
+			document.querySelectorAll('.featuring__item--right .featuring__gameCover')[0].classList.remove('featuring__gameCover--inactive');	
+
+			document.querySelectorAll('.featuring__item--middle .featuring__message')[0].classList.add('featuring__message--check');
+			document.querySelectorAll('.featuring__item--right .featuring__message')[0].classList.add('featuring__message--check');
+		}
+
+	};
+
 	var init = function() {
 
 		slider();
 		changeAmount();
 		moveProgress();
 		placeMilestones();
+		defaultValue();
+		unlockGames();
 
 	};
 

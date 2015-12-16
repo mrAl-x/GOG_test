@@ -73,20 +73,20 @@
                         <a class="featuring__description--link" href="http://www.gog.com/game/beyond_divinity">Beyond Divinity</a> (normal price $5.99) <strong class="featuring__description--strong">with 6 goodies and 4 language versions</strong>
                      </p>
                      <hr class="featuring__separator" />
-                     <p class="featuring__message featuring__message--check">Above average <strong class="featuring__message--strong">(from $X.XX)</strong></p>
+                     <p class="featuring__message featuring__message">Above average <strong class="featuring__message--strong">(from $<span class="payment__average"></span>)</strong></p>
                   </div>
                </li>
                <li class="featuring__item featuring__item--right">
                   <div class="featuring__wrapper">
                      <figure class="featuring__image featuring__image--right">
-                        <img class="featuring__gameCover featuring__gameCover--inactive" src="images/background-gameSprite-3.png" alt="" />
+                        <img class="featuring__gameCover featuring__gameCover" src="images/background-gameSprite-3.png" alt="" />
                      </figure>
                      <hr class="featuring__separator" />
                      <p class="featuring__description">
                         <a class="featuring__description--link" href="http://www.gog.com/game/divinity_2_developers_cut">Divinity 2</a> (preorder, normal price $19.99) <strong class="featuring__description--strong"> with 9 goodies and 7 language versions</strong>
                      </p>
                      <hr class="featuring__separator" />
-                     <p class="featuring__message featuring__message--error">Top supporter <strong class="featuring__message--strong">(from $XX.XX)</strong></p>
+                     <p class="featuring__message featuring__message">Top supporter <strong class="featuring__message--strong">(from $<span class="payment__top"></span>)</strong></p>
                   </div>
                </li>
             </ul>
@@ -95,7 +95,7 @@
          <section class="payment container-890">
             <span class="payment__minimum">$0.99</span>   
             <div class="payment__slider">
-               <input class="payment__range" type="range" id="price" min="0.99" max="49.99" value="14.99" step="0.01" />
+               <input class="payment__range" type="range" id="price" min="0.99" max="49.99" value="" step="0.01" />
                <div class="payment__milestonesContainer payment__milestone--average">
                   <small class="payment__milestonesText payment__milestonesText--average">$<span class="payment__average"></span> (Average)</small>
                   <div class="payment__milestone"></div>
@@ -111,7 +111,7 @@
             <span class="payment__maximum">$49.99</span>
             <div class="payment__tooltip">
                <label for="amount" class="payment__amount">$</label>
-               <input type="text" class="payment__amount" id="amount" value="14.99" maxlength="5">
+               <input type="text" class="payment__amount" id="amount" value="" maxlength="5">
                <input class="payment__checkout" type="button" value="Checkout now" />
                <small class="payment__note">
                   Click the price to type it in manually
