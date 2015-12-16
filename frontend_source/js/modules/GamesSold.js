@@ -28,12 +28,45 @@ App.GamesSold = (function() {
 		document.querySelectorAll('.sold__item--' + num)[0].classList.add('sold__check--active');
 		document.querySelectorAll('.sold__item--' + num + ' .sold__check')[0].classList.add('sold__check--active');
 		document.querySelectorAll('.sold__item--' + num + ' .sold__value')[0].classList.add('sold__value--inactive');
+
+		// Hide percentage
 		document.querySelectorAll('.sold__circle--' + num)[0].classList.add('sold__circle--inactive');
 
 		document.querySelectorAll('.sold__item--' + num)[0].classList.remove('sold__item--active');
 		( num < 5 ) 
 			? document.querySelectorAll('.sold__item--' + (num + 1))[0].classList.add('sold__item--active')
 			: num;
+	};
+
+	var unlockText = function() {
+
+		// Hide & show text
+		if ( totalSells < 10000 ) {
+			document.getElementById('sold__subtitle--1').classList.remove('sold__subtitle--inactive');
+			document.getElementById('sold__description--1').classList.remove('sold__description--inactive');
+		}
+
+		else if ( totalSells >= 10000 && totalSells < 25000 ) {
+			document.getElementById('sold__subtitle--2').classList.remove('sold__subtitle--inactive');
+			document.getElementById('sold__description--2').classList.remove('sold__description--inactive');
+		}
+
+		else if ( totalSells >= 25000 && totalSells < 50000 ) {
+			document.getElementById('sold__subtitle--3').classList.remove('sold__subtitle--inactive');
+			document.getElementById('sold__description--3').classList.remove('sold__description--inactive');
+		}
+
+		else if ( totalSells >= 50000 && totalSells < 80000 ) {
+			document.getElementById('sold__subtitle--4').classList.remove('sold__subtitle--inactive');
+			document.getElementById('sold__description--4').classList.remove('sold__description--inactive');
+		}
+
+		else if ( totalSells >= 80000 ) {
+			document.getElementById('sold__subtitle--5').classList.remove('sold__subtitle--inactive');
+			document.getElementById('sold__description--5').classList.remove('sold__description--inactive');
+		}
+
+
 	};
 
 	var unlockVideos = function() {
@@ -145,6 +178,7 @@ App.GamesSold = (function() {
 
 		gamesSold();
 		unlockVideos();
+		unlockText();
 		moveVideos();
 		sellsPercentage();
 

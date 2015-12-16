@@ -561,6 +561,14 @@
 	text-align: center;
 }
 
+.sold__subtitle--inactive {
+	display: none;
+}
+
+.sold__description--inactive {
+	display: none;
+}
+
 .sold__description {
 	@extend .goodies__description;
 	max-width: 280px;
