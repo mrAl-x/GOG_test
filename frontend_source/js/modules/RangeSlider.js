@@ -137,7 +137,9 @@ App.RangeSlider = (function() {
 			document.querySelectorAll('.featuring__item--middle .featuring__message')[0].classList.remove('featuring__message--check');
 			document.querySelectorAll('.featuring__item--right .featuring__message')[0].classList.remove('featuring__message--check');
 
-
+			
+			document.querySelector('.featuring__plus--left').classList.add('featuring__plus--inactive');
+			document.querySelector('.featuring__plus--right').classList.add('featuring__plus--inactive');
 		}
 
 		else if ( vars().amount.value >= Number(vars().average) && vars().amount.value < Number(vars().top) ) {
@@ -146,6 +148,9 @@ App.RangeSlider = (function() {
 
 			document.querySelectorAll('.featuring__item--middle .featuring__message')[0].classList.add('featuring__message--check');
 			document.querySelectorAll('.featuring__item--right .featuring__message')[0].classList.remove('featuring__message--check');
+
+			document.querySelector('.featuring__plus--left').classList.remove('featuring__plus--inactive');
+			document.querySelector('.featuring__plus--right').classList.add('featuring__plus--inactive');
 		}
 
 		else if ( vars().amount.value >= Number(vars().top) ) {
@@ -154,6 +159,9 @@ App.RangeSlider = (function() {
 
 			document.querySelectorAll('.featuring__item--middle .featuring__message')[0].classList.add('featuring__message--check');
 			document.querySelectorAll('.featuring__item--right .featuring__message')[0].classList.add('featuring__message--check');
+
+			document.querySelector('.featuring__plus--left').classList.remove('featuring__plus--inactive');
+			document.querySelector('.featuring__plus--right').classList.remove('featuring__plus--inactive');
 		}
 
 	};

@@ -99,7 +99,27 @@
 }
 
 .featuring__item {
+	position: relative;
 	width: 280px;
+}
+
+.featuring__plus {
+	position: absolute;
+	opacity: 1;
+}
+
+.featuring__plus--left {
+	right: -30px;
+	top: 65px;
+}
+
+.featuring__plus--right {
+	@extend .featuring__plus--left;
+	right: -25px;
+}
+
+.featuring__plus--inactive {
+	opacity: 0;
 }
 
 .featuring__wrapper {
