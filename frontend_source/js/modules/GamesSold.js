@@ -2,7 +2,7 @@ var App = App || {};		// If App is not defined make it an empty object
 
 App.GamesSold = (function() {
 
-	var totalSells = '22576';
+	var totalSells = '5000';
 
 	var gamesSold = function() {
 
@@ -68,11 +68,11 @@ App.GamesSold = (function() {
 		document.getElementsByClassName('sold__button--left')[0]
 			.addEventListener('click', function() {
 
-				var videoNum = Number( document.getElementsByClassName('sold__videosContainer')[0].classList[1].substr(23, 1) );
-				if ( videoNum > 1 ) {
-					document.getElementsByClassName('sold__videosContainer')[0].classList.remove('sold__videosContainer--' + videoNum);
-					document.getElementsByClassName('sold__videosContainer')[0].classList.add('sold__videosContainer--' + (videoNum - 1) );
-				}
+			var videoNum = Number( document.getElementsByClassName('sold__videosContainer')[0].classList[1].substr(23, 1) );
+			if ( videoNum > 1 ) {
+				document.getElementsByClassName('sold__videosContainer')[0].classList.remove('sold__videosContainer--' + videoNum);
+				document.getElementsByClassName('sold__videosContainer')[0].classList.add('sold__videosContainer--' + (videoNum - 1) );
+			}
 
 		});
 
@@ -89,11 +89,63 @@ App.GamesSold = (function() {
 
 	};
 
+	var createSvg = function( num, percent ) {
+
+		percent = percent * 2 * 0.01;
+
+		var canvas = document.getElementById('canvas-' + num);
+      var context = canvas.getContext('2d');
+      var centerX = canvas.width / 2;
+      var centerY = canvas.height / 2;
+      var radius = 37;
+
+      context.beginPath();
+      context.arc(centerX, centerY, radius, 0, percent * Math.PI, false);
+      context.lineWidth = 6;
+      context.strokeStyle = '#CCC';
+      context.stroke();
+
+	};
+
+	var calcPercentage = function( totalSells, value, num ) {
+
+		var percent = (totalSells / value) * 100;
+		createSvg( num, percent );
+
+		return Math.round(percent) + '%';
+
+	};
+
+	var sellsPercentage = function() {
+
+		if ( totalSells < 10000 ) {
+			document.querySelectorAll('.sold__circle--1 .sold__percentage')[0].innerHTML = calcPercentage( totalSells, 10000, 1 );
+		}
+
+		if ( totalSells < 25000 ) {
+			document.querySelectorAll('.sold__circle--2 .sold__percentage')[0].innerHTML = calcPercentage( totalSells, 25000, 2 );
+		}
+
+		if ( totalSells < 50000 ) {
+			document.querySelectorAll('.sold__circle--3 .sold__percentage')[0].innerHTML = calcPercentage( totalSells, 50000, 3 );
+		}
+
+		if ( totalSells < 80000 ) {
+			document.querySelectorAll('.sold__circle--4 .sold__percentage')[0].innerHTML = calcPercentage( totalSells, 80000, 4 );
+		}
+
+		if ( totalSells < 120000 ) {
+			document.querySelectorAll('.sold__circle--5 .sold__percentage')[0].innerHTML = calcPercentage( totalSells, 120000, 5 );
+		}
+
+	};
+
 	var init = function() {
 
 		gamesSold();
 		unlockVideos();
 		moveVideos();
+		sellsPercentage();
 
 	};
 
