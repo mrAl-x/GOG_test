@@ -109,7 +109,7 @@ App.RangeSlider = (function() {
 
 	var changeAmount = function() {
 
-		amount.addEventListener('change', function() {
+		amount.addEventListener('input', function() {
 
 			( amount.value < '0.99' ) ? amount.value = '0.99' : amount.value;
 			vars().slider.value = amount.value;
