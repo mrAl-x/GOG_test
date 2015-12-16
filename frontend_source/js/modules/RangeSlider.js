@@ -75,7 +75,7 @@ App.RangeSlider = (function() {
 		textAverage.style.left = averagePos + 'px';
 
 		// Lifts the top milestone text
-		if ( ( vars().top - vars().average ) < 4 ) {
+		if ( ( vars().top - vars().average ) < 5 ) {
 			textTop.style.top = '-28px';
 		}
 
