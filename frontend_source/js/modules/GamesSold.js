@@ -2,7 +2,7 @@ var App = App || {};		// If App is not defined make it an empty object
 
 App.GamesSold = (function() {
 
-	var totalSells = '5000';
+	var totalSells = '22576';
 
 	var gamesSold = function() {
 
@@ -28,6 +28,7 @@ App.GamesSold = (function() {
 		document.querySelectorAll('.sold__item--' + num)[0].classList.add('sold__check--active');
 		document.querySelectorAll('.sold__item--' + num + ' .sold__check')[0].classList.add('sold__check--active');
 		document.querySelectorAll('.sold__item--' + num + ' .sold__value')[0].classList.add('sold__value--inactive');
+		document.querySelectorAll('.sold__circle--' + num)[0].classList.add('sold__circle--inactive');
 
 		document.querySelectorAll('.sold__item--' + num)[0].classList.remove('sold__item--active');
 		( num < 5 ) 

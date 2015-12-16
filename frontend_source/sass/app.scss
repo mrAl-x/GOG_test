@@ -650,6 +650,10 @@
 	background: rgba(#000, .4);
 }
 
+.sold__circle--inactive {
+	display: none;
+}
+
 .sold__percentage {
 	position: relative;
 	top: 50%;
